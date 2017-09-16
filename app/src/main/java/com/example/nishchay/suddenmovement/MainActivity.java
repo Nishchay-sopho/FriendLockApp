@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private long lastUpdate=0;
     private float last_x,last_y,last_z;
-    private static final int SHAKE_THRESHOLD=300;
+    private static final int SHAKE_THRESHOLD=50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 long diffTime=currentTime-lastUpdate;
                 lastUpdate=diffTime;
 
-                float speed =Math.abs(x+y+z - last_x - last_y - last_z )/diffTime*10000;
+                float speed =Math.abs(2* x+z - last_x - last_z )/diffTime*10000;
 
                 if(speed>SHAKE_THRESHOLD){
                     Log.d("TAG","Threshold reached. Will try to lock phone !");
