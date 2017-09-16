@@ -8,7 +8,7 @@ import android.os.IBinder;
  * Created by Nishchay on 16-09-2017.
  */
 
-public class BackgroundService extends Service{
+public class BackgroundService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
